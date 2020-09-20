@@ -1,10 +1,14 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
-const addRoutes = require('./routes');
+const notes = require('./routes/notes');
 
 const app = express();
 
-addRoutes(app);
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.use('/notes', notes);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

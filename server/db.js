@@ -1,4 +1,4 @@
-const Sqlite3 = require('sqlite').verbose();
+const Sqlite3 = require('sqlite3').verbose();
 
 const dbname = 'later.sqlate';
 
